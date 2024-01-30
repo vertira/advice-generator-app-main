@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+:root {
+	--LightCyan: hsl(193, 38%, 86%);
+	--NeonGreen: hsl(150, 100%, 66%);
+	--GrayishBlue: hsl(217, 19%, 38%);
+	--DarkGrayishBlue: hsl(217, 19%, 24%);
+	--DarkBlue: hsl(218, 23%, 16%);
+}
+* {
+	font-family: "Manrope", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--DarkBlue);
+}
+p {
+	max-width: 30ch;
+	font-size: 28px;
+	color: var(--LightCyan);
+	text-align: center;
+	padding: 0rem 2rem;
+}
+h1 {
+	font-size: 14px;
+	color: var(--NeonGreen);
+	text-transform: uppercase;
+	letter-spacing: 6px;
+	margin-bottom: 1rem;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--DarkGrayishBlue);
+	min-width: 35vw;
+	min-height: 30vh;
+	padding: 2rem;
+	border-radius: 10px;
+	position: relative;
+	margin: 2rem;
+}
+.roll {
+	background-color: var(--NeonGreen);
+	border: none;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	transform: translate(0, 50%);
+}
+.dice {
+	background-color: var(--NeonGreen);
+	width: 25px;
+	cursor: pointer;
+}
+.pattern {
+	width: 90%;
+	position: absolute;
+	bottom: 4rem;
+	cursor: pointer;
+}
+.rotate {
+	animation: spin 5000ms infinite linear;
+}
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (max-width: 600px) {
+    .container{
+        min-height: 80vw;
+    }
+	p {
+		padding: 0;
+		margin: 0;
+	}
+}
