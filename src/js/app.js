@@ -13,10 +13,12 @@ const fetchAdvice = () => {
 };
 fetchAdvice();
 dice.addEventListener("click", function () {
-	const interval = setInterval(fetchAdvice, 500);
-	dice.classList.add("rotate");
-	pause.addEventListener("click", function () {
-		dice.classList.remove("rotate");
-		clearInterval(interval);
-	});
+	if (!dice.classList.contains("rotate")) {
+		const interval = setInterval(fetchAdvice, 3000);
+		dice.classList.add("rotate");
+		pause.addEventListener("click", function () {
+			dice.classList.remove("rotate");
+			clearInterval(interval);
+		});
+	} else return;
 });
